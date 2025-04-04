@@ -15,7 +15,7 @@ body {
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
-    width: 500px;
+    max-width: 500px;
     width: 90%;
     transition: 0.3s ease-in-out;
 }
@@ -34,14 +34,16 @@ h1 {
 }
 
 input {
-    width: 100%;
-    padding: 12px;
+    width: calc(100% - 20px); /* Prevent overflow */
+    padding: 10px;
     max-width: 450px;
     border: 2px solid #ccc;
     border-radius: 8px;
     margin-bottom: 12px;
     font-size: 16px;
     transition: all 0.3s ease-in-out;
+    box-sizing: border-box; /* Ensures padding is included in width */
+
 }
 
 input:focus {
@@ -171,6 +173,15 @@ li button:hover {
         width: 100%;
         margin-left: 0;
         margin-top: 8px;
+    }
+
+    .todo-wrapper {
+        width: 95%;
+    }
+
+    input {
+        width: 100%;
+        max-width: none;
     }
 
 }
